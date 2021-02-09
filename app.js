@@ -1,12 +1,16 @@
 "use strict";
-function sum(n, m, k, j) {
-    var result = n + m;
-    return bool ? j + result : 'no result';
+// const person: {
+//     firstName: string,
+//     lastName: string,
+//     age: number,
+// } = {
+var person = {
+    firstName: 'Hans',
+    lastName: 'Schmulke',
+    age: 30,
+    strings: ['one', 'two', 'three']
+};
+for (var _i = 0, _a = person.strings; _i < _a.length; _i++) {
+    var str = _a[_i];
+    console.log(str.toUpperCase());
 }
-var num1;
-num1 = 10;
-var num2 = 3.3;
-var bool = true;
-var str = "Result: ";
-var run = sum(num1, num2, bool, str);
-console.log(result);

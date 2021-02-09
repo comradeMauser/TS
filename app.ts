@@ -1,13 +1,12 @@
-function sum(n: number, m: number, k: boolean, j: string) {
-    const result = n + m
-    return bool ? j + result : 'no result'
+// const person: {
+//     firstName: string,
+//     age: number,
+// } = {
+const person = {
+    firstName: 'Name',
+    age: 22,
+    strings: ['one', 'two', 'three']
 }
-
-let num1: number
-num1 = 10
-const num2 = 3.3
-const bool = true
-const str = "Result: "
-
-const run = sum(num1, num2, bool, str)
-console.log(run)
+for (let str of person.strings){
+    console.log(str.toUpperCase())
+}
