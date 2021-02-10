@@ -1,23 +1,20 @@
-// const types: {
-//     string: string,
-//     number: number,
-//     arrType: string[],
-//     tuple: [number, string, boolean]
-// } = {
+type Inputs = number|string
+type Conversion = 'num' | 'str' | string
 
-enum Enum {FOUR, FIVE, SIX }
-
-const types = {
-    string: 'Name',
-    number: 22,
-    arrType: ['one', 'two', 'three'],
-    tuple: [1, 'a', false],
-    enum: Enum.FIVE
+function combine(n: Inputs, m: Inputs, resultConversion: Conversion) {
+    return resultConversion === 'str' ? String(n) + String(m) :
+        resultConversion === 'num' ? Number(n) + Number(m) : `resultConversion is ${resultConversion}`
 }
-types.tuple.push('3', 4)
-types.tuple[0] = 2
-console.log(types.tuple)
 
-if (types.enum === Enum.FIVE) {
-    console.log(Enum.FIVE)
-}
+const combineNumbers = combine(100, 99.9, '')
+console.log(combineNumbers)
+
+const combineStrings = combine('100', '99.9', 'none')
+console.log(combineStrings)
+
+
+const combineNumbersToString = combine(100, 99.9, 'str')
+console.log('combineNumbersToString:', combineNumbersToString)
+
+const combineStringsToNumber = combine('100', '99.9', 'num')
+console.log('combineStringsToNumber:', combineStringsToNumber)
