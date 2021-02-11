@@ -1,20 +1,17 @@
-type Inputs = number|string
-type Conversion = 'num' | 'str' | string
-
-function combine(n: Inputs, m: Inputs, resultConversion: Conversion) {
-    return resultConversion === 'str' ? String(n) + String(m) :
-        resultConversion === 'num' ? Number(n) + Number(m) : `resultConversion is ${resultConversion}`
+function sum(n: number, m: number): number {
+    return n + m
 }
 
-const combineNumbers = combine(100, 99.9, '')
-console.log(combineNumbers)
+function printRes(n: number): void {
+    console.log(`Result: ` + n)
+}
 
-const combineStrings = combine('100', '99.9', 'none')
-console.log(combineStrings)
+let someFunc: (q: number, w: number) => number
+someFunc = sum
+// someFunc = printRes
 
-
-const combineNumbersToString = combine(100, 99.9, 'str')
-console.log('combineNumbersToString:', combineNumbersToString)
-
-const combineStringsToNumber = combine('100', '99.9', 'num')
-console.log('combineStringsToNumber:', combineStringsToNumber)
+console.warn(sum(121, 144))
+console.log(`~~~~~~~~~~~~~~~~~~~~`)
+console.log(printRes(169))
+console.log(`~~~~~~~~~~~~~~~~~~~~`)
+console.log(someFunc(14, 15))

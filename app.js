@@ -1,13 +1,14 @@
-"use strict";
-function combine(n, m, resultConversion) {
-    return resultConversion === 'str' ? String(n) + String(m) :
-        resultConversion === 'num' ? Number(n) + Number(m) : "resultConversion is " + resultConversion;
+function sum(n, m) {
+    return n + m;
 }
-var combineNumbers = combine(100, 99.9, '');
-console.log(combineNumbers);
-var combineStrings = combine('100', '99.9', 'none');
-console.log(combineStrings);
-var combineNumbersToString = combine(100, 99.9, 'str');
-console.log('combineNumbersToString:', combineNumbersToString);
-var combineStringsToNumber = combine('100', '99.9', 'num');
-console.log('combineStringsToNumber:', combineStringsToNumber);
+function printRes(n) {
+    console.log("Result: " + n);
+}
+var someFunc;
+someFunc = sum;
+// someFunc = printRes
+console.warn(sum(121, 144));
+console.log("~~~~~~~~~~~~~~~~~~~~");
+console.log(printRes(169));
+console.log("~~~~~~~~~~~~~~~~~~~~");
+console.log(someFunc(14, 15));
