@@ -1,17 +1,15 @@
-function sum(n: number, m: number): number {
-    return n + m
+let userInput: unknown
+let userName: string
+
+userInput = 5050
+userInput = 'String'
+
+if (typeof userInput === 'string') {
+    userName = userInput
 }
 
-function printRes(n: number): void {
-    console.log(`Result: ` + n)
+function generateError(error: string, code: number): never {
+    throw {error, errCode: code}
 }
 
-let someFunc: (q: number, w: number) => number
-someFunc = sum
-// someFunc = printRes
-
-console.warn(sum(121, 144))
-console.log(`~~~~~~~~~~~~~~~~~~~~`)
-console.log(printRes(169))
-console.log(`~~~~~~~~~~~~~~~~~~~~`)
-console.log(someFunc(14, 15))
+generateError('Alarm! ', 666)

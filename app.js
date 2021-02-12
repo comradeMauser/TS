@@ -1,14 +1,12 @@
-function sum(n, m) {
-    return n + m;
+"use strict";
+var userInput;
+var userName;
+userInput = 5050;
+userInput = 'String';
+if (typeof userInput === 'string') {
+    userName = userInput;
 }
-function printRes(n) {
-    console.log("Result: " + n);
+function generateError(error, code) {
+    throw { error: error, errCode: code };
 }
-var someFunc;
-someFunc = sum;
-// someFunc = printRes
-console.warn(sum(121, 144));
-console.log("~~~~~~~~~~~~~~~~~~~~");
-console.log(printRes(169));
-console.log("~~~~~~~~~~~~~~~~~~~~");
-console.log(someFunc(14, 15));
+generateError('Alarm! ', 666);
