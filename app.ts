@@ -1,15 +1,11 @@
-let userInput: unknown
-let userName: string
+let city = 'Vietnam'
 
-userInput = 5050
-userInput = 'String'
+const button = document.querySelector('button')!
 
-if (typeof userInput === 'string') {
-    userName = userInput
+function clickHandler(data: string) {
+    console.log(`good morning`, data)
 }
 
-function generateError(error: string, code: number): never {
-    throw {error, errCode: code}
+if (button) {
+    button.addEventListener('click', clickHandler.bind(null, city))
 }
-
-generateError('Alarm! ', 666)

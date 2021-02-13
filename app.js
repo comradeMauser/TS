@@ -1,12 +1,9 @@
 "use strict";
-var userInput;
-var userName;
-userInput = 5050;
-userInput = 'String';
-if (typeof userInput === 'string') {
-    userName = userInput;
+var city = 'Vietnam';
+var button = document.querySelector('button');
+function clickHandler(data) {
+    console.log("good morning", data);
 }
-function generateError(error, code) {
-    throw { error: error, errCode: code };
+if (button) {
+    button.addEventListener('click', clickHandler.bind(null, city));
 }
-generateError('Alarm! ', 666);
